@@ -1,3 +1,0 @@
-﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	Zhen	F1	F2	F3	F4	F5	F6	IsCreat
-ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	阵法	特性1	特性2	特性3	特性4	特性5	特性6
-999727695	Human	0	1	岚州枭雄	中年美男子，岚州三霸之一惊蛟会的创办人，绝学有魔银手、困龙功。有三名娇妻和三名娇女，皆貌美如花。受敌家暗算身中奇毒，躯体开始衰老实力下降，不得已只能外出以寻求解药。	0	0	0	5	0	0	20,2	20,2	20,2	20,2	0,0	0,0	0,0	0,0	20,2	0,0	20,2	20,2	0,0	0,0	0,0	0,0	BeautifulFace1	HealthMaintain2	RunFast	Warrior	LunHui_Kong_4		2

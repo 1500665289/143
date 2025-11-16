@@ -1,0 +1,111 @@
+﻿<FeatureDefs><List>
+		<Feature Name="DuoTian" Type="Backstory">
+		<DisplayName>窃天者</DisplayName>
+		<Desc>窃天者往往盗取天机，所以遭上天妒忌，但这致使他的运气常常很好，甚至经常能碰到仙人传承。</Desc>
+		<ModifierDef>
+			<BaseFive>0,0,2,0,2</BaseFive>
+			<Properties>
+                                                <li Name="GodPenaltyAddV" AddV="5"/>
+                                                </Properties>
+		</ModifierDef>
+	</Feature>
+
+		<Feature Name="DuoTianCC" Type="Backstory">
+		<DisplayName>夺天传承</DisplayName>
+		<Desc>他在夺命仙人的洞府中获取了夺天丹经的传承，从此便是从两道传承中抉择，到底要悬壶济世，还是杀人如麻，全由命运来分配，并且从此与天机不共戴天。</Desc>
+		<ModifierDef>
+			<BaseFive>1,1,1,1,1</BaseFive>
+			<Properties>
+                                                <li Name="GodPenaltyAddV" AddV="10"/>
+                                                </Properties>
+		</ModifierDef>
+	</Feature>
+
+		<Feature Name="FengHuang" Type="Backstory">
+		<DisplayName>凤凰传承</DisplayName>
+		<Desc>[IT]重拾了已经失传的凤凰族修炼之法，将来必定成为修仙界的真正大能，但修仙之路危险重重，能大成者少之又少，请好好保护她。</Desc>
+		<ModifierDef>
+			<BaseFive>1,1,1,1,1</BaseFive>
+			<Skills>
+				<li Name="Qi" Level="10"/>
+				<li Name="DanQi" Level="-10"/>
+				<li Name="Fight" Level="5"/>
+				<li Name="Manual" Level="-8"/>
+				<li Name="Medicine" Level="-5"/>
+				<li Name="DouFa" Level="10"/>
+			</Skills>
+			<Properties>
+                                                <li Name="DeepPracticeSpeedSpecialCoefficient" AddP="2"/>
+			<li Name="IntelligenceSkillEXPConstant" AddP="0.5"/>
+			<li Name="MindStateBaseValue" AddV="-10"/>
+			<li Name="NpcFight_BaseHitChance" AddV="0.4"/>
+			<li Name="NpcFight_BaseDodgeChance" AddV="0.2"/>
+                                                </Properties>
+		</ModifierDef>
+	</Feature>
+
+		<Feature Name="WuGen" Type="Backstory">
+		<DisplayName>无道根者</DisplayName>
+		<Desc>此人身体中完全没有一点道根，这使得[IT]修炼任何功法都异常缓慢。但上天往往也会因此无视他的作为。</Desc>
+		<ModifierDef>
+			<BaseFive>-1,-1,-1,-1,-1</BaseFive>
+			<Properties>
+                                                <li Name="DeepPracticeSpeedSpecialCoefficient" AddP="-0.5"/>
+                                                <li Name="GodPenaltyAddV" AddV="-20"/>
+                                                </Properties>
+		</ModifierDef>
+	</Feature>
+
+		<Feature Name="HongMeng" Type="Backstory">
+		<DisplayName>鸿蒙传承</DisplayName>
+		<Desc>[IT]获取了天地鸿蒙之运的传承，身上肩负着庞大的使命，虽然太古鸿蒙诀威力很强，但是修炼的资源往往比其他人要多几十倍，[IT]的修仙之路遥遥无期，请努力培养。</Desc>
+		<ModifierDef>
+			<BaseFive>2,2,2,2,2</BaseFive>
+			<Properties>
+                                                <li Name="DeepPracticeSpeedSpecialCoefficient" AddP="3"/>
+			<li Name="MindStateBaseValue" AddV="30"/>
+                                                <li Name="GodPenaltyAddV" AddV="-20"/>
+                                                </Properties>
+		</ModifierDef>
+	</Feature>
+
+		<Feature Name="LianQi" Type="Backstory">
+		<DisplayName>炼器师</DisplayName>
+		<Desc>炼器师对于炼器有狂热的追求，只要能提高炼器水平，一切的在所不惜。</Desc>
+		<ModifierDef>
+			<BaseFive>0,0,0,0,0</BaseFive>
+			<Skills>
+				<li Name="DanQi" Level="3"/>
+				<li Name="Fight" Level="-5"/>
+				<li Name="Manual" Level="-8"/>
+				<li Name="Medicine" Level="-5"/>
+				<li Name="DouFa" Level="-10"/>
+			</Skills>
+			<Properties>
+                                                <li Name="FabaoMake_SpeedAddV" AddV="0.05"/>
+                                                <li Name="FabaoMake_SuccessRateAddV" AddV="0.03"/>
+                                                </Properties>
+		</ModifierDef>
+		</Feature>
+
+		<Feature Name="TianJian" Type="Backstory">
+		<DisplayName>天鉴传承</DisplayName>
+		<Desc>[IT]接受了百炼殿的混元百炼天鉴的传承，将来必定在炼器上成为宗师级别的人甚至修仙界炼器第一人。</Desc>
+		<ModifierDef>
+			<BaseFive>1,0,0,0,0</BaseFive>
+			<Skills>
+				<li Name="Qi" Level="3"/>
+				<li Name="DanQi" Level="5"/>
+			</Skills>
+			<Properties>
+		               <li Name="FabaoMake_SpeedAddV" AddV="0.05"/>
+			<li Name="FabaoMake_SuccessRateAddV" AddV="0.03"/>
+                                                <li Name="FabaoMake_QualityAddV" AddV="0.01"/>
+                                                <li Name="FabaoMake_LingInheritRateAddV" AddV="0.03"/>
+                                                <li Name="FabaoMake_TwelveRateChance" AddV="-0.025"/>
+			<li Name="MindStateBaseValue" AddV="10"/>
+                                                </Properties>
+		</ModifierDef>
+	</Feature>
+
+</List></FeatureDefs>

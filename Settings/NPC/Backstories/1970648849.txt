@@ -1,3 +1,0 @@
-﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	Zhen	F1	F2	F3	F4	F5	F6	IsCreat
-ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	阵法	特性1	特性2	特性3	特性4	特性5	特性6
-1970648849	Human	2	2	红颜知己	冰凤仙子后遇见和韩立模样的六翼霜蚣，被其苦苦纠缠、追求，自己一心想念韩立不为所动，但与其结伴游历灵界。逢仙人马良下界，因为看上六翼霜蚣想收为灵宠被连累追杀，危急时刻韩立赶到救下自己。真仙大战后被韩立带回人族，留在青元宫中。八千年期间成为韩立亲密之人，修为也修至合体大成期。大结局韩立飞升仙界时，冰凤仙子留在了人族青元宫。\n	0	0	0	10	0	10	0,0	0,0	20,2	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	Enthusiasm	LunHui_2					2

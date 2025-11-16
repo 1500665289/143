@@ -1,4 +1,0 @@
-﻿ID	IsHide	LastName	FristName	Desc	Sex	Age	BodyType	Hair	Beard	ClothesStuff	BodyColor	BackStory1	BackStory2	BackStory3	Feature1	Feature2	Feature3	Experience1	Experience2	Experience3	Experience4	Relation1	Relation2	Relation3	Seed	IsCreat
-ID	是否隐藏1 不参与随机但参与创建
-2 不参与随机也不参与创建	姓	名	轮回者来源	性别(1男2女)	年龄	身体类型(1正常2壮3胖)	头发ID	胡须ID	衣服主材料	肤色(正常0白1黑2黄3)	背景故事1	背景故事2	背景故事3	附加特性1	附加特性2	附加特性3	经历1	经历2	经历3	经历4	关系1(ID|NAME)	关系2(ID|NAME)	关系3(ID|NAME)	创建方式
-502866611	0	妍	丽	忘语小说《凡人修仙传》人物。魁星岛附近的修仙小门派女修，与师妹元瑶情同手足，受高阶修士欺骗沦为鼎炉，后肉身销毁剩下元神寄生于养魂木中，还魂术失败后完全变为鬼魂并与元瑶在阴冥之地修炼鬼道以求复生。	2	16	1	4	0	Item_BlackCloth	0	2031118908	679554697	1338687204				Experiences29	Experiences3	Experiences8					-2095166008	2

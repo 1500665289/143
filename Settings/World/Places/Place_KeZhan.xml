@@ -1,0 +1,8 @@
+﻿<Places><List>
+	<Place Name="Place_KeZhan" Parent="Place_Level3Base">
+		<Location X="1360" Y="820"/>
+		<Icon>Spr\Object\kezhan.png</Icon>
+		<DisplayName>同福客栈</DisplayName>
+		<Desc>同福客栈开业了，修仙界里各类修行者在此聚集的地方，也许能遇到什么奇特的人？</Desc>
+	</Place>
+</List></Places>

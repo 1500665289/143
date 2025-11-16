@@ -1,3 +1,0 @@
-﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	Zhen	F1	F2	F3	F4	F5	F6	IsCreat
-ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	阵法	特性1	特性2	特性3	特性4	特性5	特性6
-784430683	Human	1	2	知人知面不知心	陆师兄在筑基丹以及董萱儿的诱惑下，为与其双修拜在红拂门下而暗下杀手。在被韩立撞见后，一番搏杀后，陈巧倩被韩立救下并发生了一些香艳之事。由于筑基丹的缺失，参加了血色试练，人也变得冷漠，男子勿近。对于最后韩立的大丰收表示出对其的侥幸不屑。	0	2	2	0	0	0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	Strong	HeartKnot					2

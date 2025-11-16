@@ -1,3 +1,0 @@
-﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	Zhen	F1	F2	F3	F4	F5	F6	IsCreat
-ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	阵法	特性1	特性2	特性3	特性4	特性5	特性6
-304143203	Human	1	1	长春功	某次外出遇到余子童，求药不成，突施暗算，毁了余子童法体，自身也受余子童重创，成了病怏怏的老头，后来被余子童附身，两人达成协议。化名为墨大夫以一手高超医术躲在七玄门成为客卿，后受余子童的指点收韩立、张铁为徒，培养他们修炼长春功，准备夺舍之用。	0	1	0	0	2	2	20,2	20,2	0,0	20,2	0,0	0,0	20,2	0,0	20,2	0,0	20,2	20,2	0,0	0,0	0,0	0,0	LunHui_61						2

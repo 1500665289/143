@@ -1,3 +1,0 @@
-﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	Zhen	F1	F2	F3	F4	F5	F6	IsCreat
-ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	阵法	特性1	特性2	特性3	特性4	特性5	特性6
-360903617	Human	2	1	曲魂	之后张铁被墨大夫害死，其体被制成炼尸曲魂，墨大夫死后将曲魂留给了韩立护身。韩立拜入黄枫谷后不方便将其帯在身边，将其交给孙二狗看管。魔道入侵后，韩立重回嘉元城，发现曲魂被御灵宗修土占据身躯。韩立夺回曲魂，将其作为身外化身，并凝结煞丹，使其修炼血炼神光。在乱星海韩立带领曲魂出海捕杀数百妖兽，最后在虚天殿中被玄骨上人夺去身躯，身躯被乾蓝冰焰熔化化为灰烬。	0	-2	10	-2	0	-2	20,2	20,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	20,2	0,0	0,0	0,0	0,0	0,0	UglyFace2	Mute	Numbness	LunHui_4	MeridianIncomplete		2

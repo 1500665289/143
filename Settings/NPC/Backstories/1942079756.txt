@@ -1,3 +1,0 @@
-﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	Zhen	F1	F2	F3	F4	F5	F6	IsCreat
-ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	阵法	特性1	特性2	特性3	特性4	特性5	特性6
-1942079756	Human	0	2	落云宗	落云宗筑基期女修，负责管理药园，韩立进落云宗后，归其管辖，传韩立玄冰决功法。她的家族为了她哥哥，通过换婚的方式，逼她嫁给一个既矬又色的言师兄，而且修为还不如她。眼界甚高的慕姑娘哪能看上他，越想越气，但家族命运的枷锁却越勒越紧，一次又一次的逃避，如今已到山穷水尽的地步。	0	3	2	5	3	3	0,0	20,2	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	20,2	0,0	0,0	0,0	0,0	0,0	BeautifulFace1	Weak	DeepPotential	LunHui_2	LunHui_Kong_6	HeartKnot	2

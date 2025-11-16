@@ -1,3 +1,0 @@
-﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	Zhen	F1	F2	F3	F4	F5	F6	IsCreat
-ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	阵法	特性1	特性2	特性3	特性4	特性5	特性6
-2083479791	Human	1	2	爱与恨	在人间已经是元婴后期大能修士，随后和韩立一起穿空间裂缝飞升灵界，因在进入空间裂缝时双方都在对方身上下了禁制，而后来通过空间裂缝中发生意外导致双方分开，所以引发禁制，而后因种种原因冰凤虽然恢复实力但却落入了合体修士的手上，后来在拍卖会上被韩立所救回，之后跟随在韩立身边。韩立给她提供了很多丹药，韩立外出修行时，韩立的徒子徒孙就是由她来指点的。后来和魔界开战，她就随着韩立进入了天渊城；自己被青龙上人看上抢夺，韩立因之大战，用元阴帮韩立冲击突破合体后期。	0	-3	-3	0	-3	-3	20,2	20,2	20,2	0,0	0,0	0,0	0,0	0,0	20,2	0,0	20,2	0,0	0,0	0,0	0,0	0,0	Careful	LunHui_60					2

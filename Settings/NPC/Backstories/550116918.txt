@@ -1,3 +1,0 @@
-﻿ID	Race	Grades	Sex	Name	Desc	BeginYear	Perception	Physique	Charisma	Intelligence	Luck	Fight	Qi	SocialContact	Medicine	Cooking	Building	Farming	Mining	Art	Manual	DouFa	DanQi	Fabao	FightSkill	Barrier	Zhen	F1	F2	F3	F4	F5	F6	IsCreat
-ID	种族	阶段 0童年 1成年 2重大事件 	性别 0均可 1男 2女	名字	描述	触发开始年份	感知	体质	魅力	悟性	运气	战斗	气感	社交 （所有技能等级后面可以附加,X。X为热爱程度 1为热爱 2为痴迷）	医术	厨艺	建筑	农事	采掘	艺术	制造	斗法	丹器	御物	术法	护体	阵法	特性1	特性2	特性3	特性4	特性5	特性6
-550116918	Human	2	2	冰血交融	血魂在韩立帮助下进入天鼎宫，自认为法力低微打算在天鼎宫外围寻找本体，而韩立则进入内部寻找冰魄本体顺便找寻宝物，为了安全，噬金虫王金童陪伴血魂，当血魂被赤雷攻击，金童将赤雷击杀。另一边，本体在韩立帮助下得到完整的天鼎真人衣钵，成为人族的第三名大乘。在韩立帮助下击退索要天鼎衣钵之人，并护法冰魄与血魂合二为一。冰魄仙子出天鼎宫后，寻地闭关稳定自身对本体的控制。后返回人族，目睹韩立渡飞升之劫。	0	0	0	2	0	0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	0,0	BeautifulFace1						2
