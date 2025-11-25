@@ -79,7 +79,7 @@ function KeZhan:AddOldID(ID)
 end
 
 function KeZhan:GetNPC(i)
-    if i and NPCING[i] then
+    if i and i >= 1 and i <= #NPCING then
         return NPCING[i] == 0;
     end
     return false;

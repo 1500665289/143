@@ -84,7 +84,7 @@
                     GameMain:GetMod("KeZhan"):AddNPC(1)
                     local name = me.npcObj.Name
                     local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5288); 
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
+                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), me.Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
                     npc.PropertyMgr:AddFeature("WuGen")
                     npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
                     me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，慕容七绝禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
@@ -101,7 +101,7 @@
                     GameMain:GetMod("KeZhan"):AddNPC(2)
                     local name = me.npcObj.Name
                     local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5289); 
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
+                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), me.Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
                     npc.PropertyMgr:AddFeature("DuoTian")
                     npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
                     me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，明菩提禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
@@ -118,7 +118,7 @@
                     GameMain:GetMod("KeZhan"):AddNPC(3)
                     local name = me.npcObj.Name
                     local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5290); 
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
+                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), me.Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
                     npc.PropertyMgr:AddFeature("LianQi")
                     npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
                     me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，墨千机禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
@@ -135,7 +135,7 @@
                     GameMain:GetMod("KeZhan"):AddNPC(4)
                     local name = me.npcObj.Name
                     local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5291); 
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
+                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), me.Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
                     npc.PropertyMgr:AddFeature("LunHui_7")
                     npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
                     me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，慕辰雪禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
@@ -164,7 +164,7 @@
                         local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(npcID)
                         if npc then
                             local npcname = npc.Name
-                            CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player)
+                            CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), me.Map, CS.XiaWorld.Fight.g_emFightCamp.Player)
                             npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker)
                             me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..npcname.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
                         else
@@ -208,7 +208,7 @@
                                 if ID then
                                     local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(ID)
                                     if npc then
-                                        CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player)
+                                        CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Npc.Map, CS.XiaWorld.Fight.g_emFightCamp.Player)
                                         npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker)
                                         local npcData = NpcMgr:GetReincarnateDataByID(ID)
                                         local npcName = npcData and (npcData.LastName or "") .. (npcData.FristName or "") or "未知NPC"
@@ -253,7 +253,7 @@
                         local rate = me:RandomInt(1, #IDList)
                         local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(IDList[rate])
                         if npc then
-                            CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player)
+                            CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Npc.Map, CS.XiaWorld.Fight.g_emFightCamp.Player)
                             npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker)
                             local npcData = NpcMgr:GetReincarnateDataByID(IDList[rate])
                             local npcName = npcData and (npcData.LastName or "") .. (npcData.FristName or "") or "未知NPC"
@@ -290,7 +290,7 @@
                     local name = me.npcObj.Name
                     local SECRET = {53,76}
                     local rate = world:RandomInt(1,100)
-                    if rate >= 90 and World and World.DayCount and World.DayCount >= 300 then
+                    if World and World.DayCount and World.DayCount >= 300 and rate >= 90 then
                         GameEventMgr:TriggerEvent(97)
                         me:AddMsg(""..name.."在周围几桌修士议论的话题打听得知一条关于古修的消息，获得新的秘闻。")
                     elseif rate >= 70 then
