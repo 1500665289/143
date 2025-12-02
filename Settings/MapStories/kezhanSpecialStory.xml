@@ -1,314 +1,260 @@
-<Stories>
-    <List>	
-        <!-- 同福客栈入口故事 -->
-        <Story Name="Secrets_KZ" Parent="BaseFillingStory">
-            <DisplayName>同福客栈</DisplayName>
-            <Desc>佟湘玉亲切地招待了来到客栈的[NAME]，并沏好了上好的乌龙茶给[NAME]喝。</Desc>
-            <Selections>
-                <li>
-                    <Display>进入客栈</Display> 
-                    <OKResult><![CDATA[
-                    world:PlayBGM("Spr/YMT.ogg",false);  <!-- 播放客栈背景音乐 -->
-                    me:TriggerStory("Secrets_KZ1");      <!-- 触发客栈主菜单故事 -->
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>离开客栈</Display>
-                    <OKResult><![CDATA[	
-                    me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
-                    ]]>
-                    </OKResult>
-                </li>
-            </Selections>
-        </Story>
+<Stories><List>	
+<Story Name="Secrets_KZ"  Parent="BaseFillingStory">
+		<DisplayName>同福客栈</DisplayName>
+		<Desc>佟湘玉亲切地招待了来到客栈的[NAME]，并沏沏好了上好的乌龙茶给[NAME]喝。</Desc>
+		<Selections>
+			<li>
+				<Display>进入客栈</Display> 
+				<OKResult><![CDATA[
+				world:PlayBGM("Spr/YMT.ogg",false);
+				me:TriggerStory("Secrets_KZ1");
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>离开客栈</Display>
+				<OKResult><![CDATA[	
+				me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
+				]]>
+				</OKResult>
+			</li>
+		</Selections>
+	</Story>
 
-        <!-- 客栈主菜单 - 选择不同类型的轮回者 -->
-        <Story Name="Secrets_KZ1" Parent="BaseFillingStory">
-            <DisplayName>同福客栈</DisplayName>
-            <Desc>佟湘玉亲切地招待了来到客栈的[NAME]，并沏好了上好的乌龙茶给[NAME]喝。</Desc>
-            <Selections>
-                <li>
-                    <Display>太古轮回者</Display> 
-                    <Tip>太古鸿蒙诀系列</Tip>
-                    <OKResult><![CDATA[
-                    me:TriggerStory("Secrets_KZ2");  <!-- 触发固定NPC选择故事 -->
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>随机轮回者</Display> 
-                    <Tip>官方轮回者系列</Tip>
-                    <OKResult><![CDATA[
-                    me:TriggerStory("Secrets_KZ3");  <!-- 触发官方随机轮回者 -->
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>模组轮回者</Display> 
-                    <Tip>万象天宫系列</Tip>
-                    <OKResult><![CDATA[
-                    me:TriggerStory("Secrets_KZ4");  <!-- 触发模组轮回者选择列表 -->
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>随机轮回者</Display> 
-                    <Tip>万象天宫系列</Tip>
-                    <OKResult><![CDATA[
-                    me:TriggerStory("Secrets_KZ5");  <!-- 触发模组随机轮回者 -->
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>打听秘闻</Display> 
-                    <OKResult><![CDATA[
-                    me:TriggerStory("Secrets_KZ6");  <!-- 触发打听消息功能 -->
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>离开客栈</Display>
-                    <OKResult><![CDATA[
-                    me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
-                    ]]>
-                    </OKResult>
-                </li>
-            </Selections>
-        </Story>
+<Story Name="Secrets_KZ1"  Parent="BaseFillingStory">
+		<DisplayName>同福客栈</DisplayName>
+		<Desc>佟湘玉亲切地招待了来到客栈的[NAME]，并沏沏好了上好的乌龙茶给[NAME]喝。</Desc>
+		<Selections>
+			<li>
+				<Display>太古轮回者</Display> 
+				<Tip>太古鸿蒙诀系列</Tip>
+				<OKResult><![CDATA[
+				me:TriggerStory("Secrets_KZ2");
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>随机轮回者</Display> 
+				<Tip>官方轮回者系列</Tip>
+				<OKResult><![CDATA[
+				me:TriggerStory("Secrets_KZ3");
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>模组轮回者</Display> 
+				<Tip>万象天宫系列</Tip>
+				<OKResult><![CDATA[
+				me:TriggerStory("Secrets_KZ4");
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>随机轮回者</Display> 
+				<Tip>万象天宫系列</Tip>
+				<OKResult><![CDATA[
+				me:TriggerStory("Secrets_KZ5");
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>打听秘闻</Display> 
+				<OKResult><![CDATA[
+				me:TriggerStory("Secrets_KZ6");
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>离开客栈</Display>
+				<OKResult><![CDATA[
+				me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
+				]]>
+				</OKResult>
+			</li>
+		</Selections>
+	</Story>
 
-        <!-- 太古轮回者选择 - 4个固定NPC -->
-        <Story Name="Secrets_KZ2" Parent="BaseFillingStory">
-            <DisplayName>奇人异象</DisplayName>
-            <Desc>[NAME]在桌子上喝了喝茶，发现周围有几个不同寻常的人物。</Desc>
-            <Selections>
-                <!-- 慕容七绝 - 无道根者 -->
-                <li>
-                    <Display>慕容七绝</Display> 
-                    <Tip>无道根者</Tip>
-                    <!-- 显示条件：检查客栈位置1是否可用 -->
-                    <DisplayCondition><![CDATA[
-                    GameMain:GetMod("KeZhan"):GetNPC(1)
-                    ]]>
-                    </DisplayCondition>
-                    <OKResult><![CDATA[
-                    GameMain:GetMod("KeZhan"):AddNPC(1)  <!-- 标记位置1为已占用 -->
-                    local name = me.npcObj.Name
-                    local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5288);  <!-- 创建NPC 5288 -->
 
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
-                    npc.PropertyMgr:AddFeature("WuGen")  <!-- 添加无道根特性 -->
-                    npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);  <!-- 设置为工人身份 -->
-                    me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，慕容七绝禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
-                    ]]></OKResult>
-                </li>
-                
-                <!-- 明菩提 - 窃天者 -->
-                <li>
-                    <Display>明菩提</Display> 
-                    <Tip>窃天者</Tip>
-                    <DisplayCondition><![CDATA[
-                    GameMain:GetMod("KeZhan"):GetNPC(2)
-                    ]]>
-                    </DisplayCondition>
-                    <OKResult><![CDATA[
-                    GameMain:GetMod("KeZhan"):AddNPC(2)
-                    local name = me.npcObj.Name
-                    local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5289); 
 
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
-                    npc.PropertyMgr:AddFeature("DuoTian")  <!-- 添加窃天特性 -->
-                    npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
-                    me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，明菩提禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
-                    ]]></OKResult>
-                </li>
-                
-                <!-- 墨千机 - 炼器师 -->
-                <li>
-                    <Display>墨千机</Display> 
-                    <Tip>炼器师</Tip>
-                    <DisplayCondition><![CDATA[
-                    GameMain:GetMod("KeZhan"):GetNPC(3)
-                    ]]>
-                    </DisplayCondition>
-                    <OKResult><![CDATA[
-                    GameMain:GetMod("KeZhan"):AddNPC(3)
-                    local name = me.npcObj.Name
-                    local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5290); 
 
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
-                    npc.PropertyMgr:AddFeature("LianQi")  <!-- 添加炼器特性 -->
-                    npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
-                    me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，墨千机禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
-                    ]]></OKResult>
-                </li>
-                
-                <!-- 慕辰雪 - 凤凰血脉 -->
-                <li>
-                    <Display>慕辰雪</Display> 
-                    <Tip>凤凰血脉</Tip>
-                    <DisplayCondition><![CDATA[
-                    GameMain:GetMod("KeZhan"):GetNPC(4)
-                    ]]>
-                    </DisplayCondition>
-                    <OKResult><![CDATA[
-                    GameMain:GetMod("KeZhan"):AddNPC(4)
-                    local name = me.npcObj.Name
-                    local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5291); 
+<Story Name="Secrets_KZ2"  Parent="BaseFillingStory">
+		<DisplayName>奇人异象</DisplayName>
+		<Desc>[NAME]在桌子上喝了喝茶，发现周围有几个不同寻常的人物。</Desc>
+		<Selections>
+			<li>
+				<Display>慕容七绝</Display> 
+				<Tip>无道根者</Tip>
+				<DisplayCondition><![CDATA[
+				GameMain:GetMod("KeZhan"):GetNPC(1)
+				]]>
+				</DisplayCondition>
+				<OKResult><![CDATA[
+				GameMain:GetMod("KeZhan"):AddNPC(1)
+				local name = me.npcObj.Name
+				local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5288); 
 
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
-                    npc.PropertyMgr:AddFeature("LunHui_7")  <!-- 添加轮回特性 -->
-                    npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
-                    me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，慕辰雪禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
-                    ]]></OKResult>
-                </li>
-                
-                <li>
-                    <Display>离开客栈</Display>
-                    <OKResult><![CDATA[	
-                    me:AddMsg("[NAME]想了想，该做的事都已经做了，是该离开了。");
-                    ]]>
-                    </OKResult>
-                </li>
-            </Selections>
-        </Story>
+				CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
+				npc.PropertyMgr:AddFeature("WuGen")
+				npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
+				me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，慕容七绝禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>明菩提</Display> 
+				<Tip>窃天者</Tip>
+				<DisplayCondition><![CDATA[
+				GameMain:GetMod("KeZhan"):GetNPC(2)
+				]]>
+				</DisplayCondition>
+				<OKResult><![CDATA[
+				GameMain:GetMod("KeZhan"):AddNPC(2)
+				local name = me.npcObj.Name
+				local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5289); 
 
-        <!-- 官方随机轮回者 -->
-        <Story Name="Secrets_KZ3" Parent="BaseFillingStory">
-            <DisplayName>奇人异象</DisplayName>
-            <Desc>[NAME]在桌子上喝了喝茶，发现周围有几个不同寻常的人物。</Desc>
-            <Selections>
-                <li>
-                    <Display>随机轮回者</Display> 
-                    <OKResult><![CDATA[
-                    local name = me.npcObj.Name
-                    <!-- 从预定义的ID列表中随机选择一个NPC -->
-                    local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(GameMain:GetMod("KeZhan"):GetID()); 
-                    local npcname = npc.Name
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
-                    npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
-                    me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..npcname.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>离开客栈</Display>
-                    <OKResult><![CDATA[
-                    me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
-                    ]]>
-                    </OKResult>
-                </li>
-            </Selections>
-        </Story>
+				CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
+				npc.PropertyMgr:AddFeature("DuoTian")
+				npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
+				me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，明菩提禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>墨千机</Display> 
+				<Tip>炼器师</Tip>
+				<DisplayCondition><![CDATA[
+				GameMain:GetMod("KeZhan"):GetNPC(3)
+				]]>
+				</DisplayCondition>
+				<OKResult><![CDATA[
+				GameMain:GetMod("KeZhan"):AddNPC(3)
+				local name = me.npcObj.Name
+				local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5290); 
 
-        <!-- 模组轮回者选择列表 -->
-        <Story Name="Secrets_KZ4" Parent="BaseFillingStory">
-            <DisplayName>奇人异象</DisplayName>
-            <Desc>[NAME]在桌子上喝了喝茶，发现周围有几个不同寻常的人物。</Desc>
-            <Selections>
-                <li>
-                    <Display>模组轮回者</Display> 
-                    <OKResult><![CDATA[
-                    local Npc = me;
-                    local name = Npc.npcObj.Name
-                    <!-- 获取所有可用的模组NPC姓名和ID列表 -->
-                    local NameList = GameMain:GetMod("KeZhan"):GetAllModNpcName()
-                    local IDList = GameMain:GetMod("KeZhan"):GetAllModNpcID()
-                    
-                    <!-- 显示选择对话框，列出所有可选的模组NPC -->
-                    world:ShowStoryBox(""..name.."环顾了四周天宫降临的奇人，想要邀请他们加入自己的门派。", "天宫奇人",NameList,
-                    function(Key)
-                        local key = Key + 1;  <!-- 调整索引（Lua从1开始） -->
-                        if key == #NameList then
-                            <!-- 选择最后一个选项"离开此地" -->
-                            world:ShowMsgBox(""..name.."想了想，决定还是不冒险，转身离去。","离开客栈");
-                        else
-                            <!-- 选择具体NPC -->
-                            local ID = IDList[key]
-                            local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(ID);
-                            CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
-                            npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
-                            <!-- 显示邀请成功消息 -->
-                            world:ShowMsgBox(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..NpcMgr:GetReincarnateDataByID(ID).LastName..NpcMgr:GetReincarnateDataByID(ID).FristName.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。","邀请加入")
-                            <!-- 标记该NPC为已处理，避免重复邀请 -->
-                            GameMain:GetMod("KeZhan"):AddOldID(ID)
-                        end
-                    });
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>离开客栈</Display>
-                    <OKResult><![CDATA[
-                    me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
-                    ]]>
-                    </OKResult>
-                </li>
-            </Selections>
-        </Story>
+				CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
+				npc.PropertyMgr:AddFeature("LianQi")
+				npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
+				me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，墨千机禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>慕辰雪</Display> 
+				<Tip>凤凰血脉</Tip>
+				<DisplayCondition><![CDATA[
+				GameMain:GetMod("KeZhan"):GetNPC(4)
+				]]>
+				</DisplayCondition>
+				<OKResult><![CDATA[
+				GameMain:GetMod("KeZhan"):AddNPC(4)
+				local name = me.npcObj.Name
+				local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(5291); 
 
-        <!-- 随机模组轮回者 -->
-        <Story Name="Secrets_KZ5" Parent="BaseFillingStory">
-            <DisplayName>奇人异象</DisplayName>
-            <Desc>[NAME]在桌子上喝了喝茶，发现周围有几个不同寻常的人物。</Desc>
-            <Selections>
-                <li>
-                    <Display>模组轮回者</Display> 
-                    <OKResult><![CDATA[
-                    local Npc = me;
-                    local name = Npc.npcObj.Name
-                    local IDList = GameMain:GetMod("KeZhan"):GetAllModNpcID()
-                    world:SetRandomSeed()
-                    <!-- 随机选择一个模组NPC -->
-                    local rate = me:RandomInt(1,#IDList)
-                    local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(IDList[rate]);
-                    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
-                    npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
-                    <!-- 显示NPC的描述信息 -->
-                    world:ShowMsgBox(""..NpcMgr:GetReincarnateDataByID(IDList[rate]).Desc.."",""..NpcMgr:GetReincarnateDataByID(IDList[rate]).LastName..NpcMgr:GetReincarnateDataByID(IDList[rate]).FristName.."")
-                    me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..NpcMgr:GetReincarnateDataByID(IDList[rate]).LastName..NpcMgr:GetReincarnateDataByID(IDList[rate]).FristName.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
-                    <!-- 标记该NPC为已处理 -->
-                    GameMain:GetMod("KeZhan"):AddOldID(IDList[rate])
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>离开客栈</Display>
-                    <OKResult><![CDATA[
-                    me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
-                    ]]>
-                    </OKResult>
-                </li>
-            </Selections>
-        </Story>
+				CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
+				npc.PropertyMgr:AddFeature("LunHui_7")
+				npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
+				me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，慕辰雪禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>离开客栈</Display>
+				<OKResult><![CDATA[	
+				me:AddMsg("[NAME]想了想，该做的事都已经做了，是该离开了。");
+				]]>
+				</OKResult>
+			</li>
+		</Selections>
+	</Story>
 
-        <!-- 打听秘闻功能 -->
-        <Story Name="Secrets_KZ6" Parent="BaseFillingStory">
-            <DisplayName>打听秘闻</DisplayName>
-            <Desc>[NAME]在桌子上喝了喝茶，细细打听了周围几桌修士所议论的话题。</Desc>
-            <Selections>
-                <li>
-                    <Display>打听四周</Display> 
-                    <OKResult><![CDATA[
-                    world:SetRandomSeed()
-                    local name = me.npcObj.Name
-                    local SECRET = {53,76}  <!-- 秘闻事件ID范围 -->
-                    local rate = world:RandomInt(1,100)  <!-- 随机概率 -->
-                    
-                    <!-- 概率判断：90%以上且游戏天数≥300天 -->
-                    if rate >= 90 and World.DayCount >= 300 then
-                        GameEventMgr:TriggerEvent(97)  <!-- 触发古修消息事件 -->
-                        me:AddMsg(""..name.."在周围几桌修士议论的话题打听得知一条关于古修的消息，获得新的秘闻。");
-                    <!-- 概率判断：70%以上 -->
-                    elseif rate >= 70 then
-                        me:AddMsg(""..name.."在周围几桌修士议论的话题打听得知最近有新的事情发生，获得新的秘闻。");
-                        <!-- 随机触发一个秘闻事件 -->
-                        GameEventMgr:TriggerEvent(world:RandomInt(SECRET[1],SECRET[2]))	
-                    else
-                        <!-- 概率较低，无收获 -->
-                        me:AddMsg(""..name.."打听了一圈，发现最近并没有新的事情发生，便打道返回。")
-                    end
-                    ]]></OKResult>
-                </li>
-                <li>
-                    <Display>离开客栈</Display>
-                    <OKResult><![CDATA[
-                    me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
-                    ]]>
-                    </OKResult>
-                </li>
-            </Selections>
-        </Story>
-    </List>
-</Stories>
+<Story Name="Secrets_KZ3"  Parent="BaseFillingStory">
+		<DisplayName>奇人异象</DisplayName>
+		<Desc>[NAME]在桌子上喝了喝茶，发现周围有几个不同寻常的人物。</Desc>
+		<Selections>
+			<li>
+				<Display>随机轮回者</Display> 
+				<OKResult><![CDATA[
+				local name = me.npcObj.Name
+				local npc = CS.XiaWorld.NpcRandomMechine.MakeReincarnateNpc(GameMain:GetMod("KeZhan"):GetID()); 
+				local npcname = npc.Name
+				CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
+				npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
+				me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..npcname.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。")
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>离开客栈</Display>
+				<OKResult><![CDATA[
+				me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
+				]]>
+				</OKResult>
+			</li>
+		</Selections>
+	</Story>
+
+
+<Story Name="Secrets_KZ4"  Parent="BaseFillingStory">
+		<DisplayName>奇人异象</DisplayName>
+		<Desc>[NAME]在桌子上喝了喝茶，发现周围有几个不同寻常的人物。</Desc>
+		<Selections>
+			<li>
+				<Display>模组轮回者</Display> 
+				<OKResult><![CDATA[
+					GameMain:GetMod("KeZhan"):Secrets_KZ_Choice()
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>离开客栈</Display>
+				<OKResult><![CDATA[
+				me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
+				]]>
+				</OKResult>
+			</li>
+		</Selections>
+	</Story>
+
+<Story Name="Secrets_KZ5"  Parent="BaseFillingStory">
+		<DisplayName>奇人异象</DisplayName>
+		<Desc>[NAME]在桌子上喝了喝茶，发现周围有几个不同寻常的人物。</Desc>
+		<Selections>
+			<li>
+				<Display>模组轮回者</Display> 
+				<OKResult><![CDATA[
+					GameMain:GetMod("KeZhan"):Secrets_KZ_Random()
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>离开客栈</Display>
+				<OKResult><![CDATA[
+				me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
+				]]>
+				</OKResult>
+			</li>
+		</Selections>
+	</Story>
+
+
+<Story Name="Secrets_KZ6"  Parent="BaseFillingStory">
+		<DisplayName>打听秘闻</DisplayName>
+		<Desc>[NAME]在桌子上喝了喝茶，细细打听了周围几桌修士所议论的话题。</Desc>
+		<Selections>
+			<li>
+				<Display>打听四周</Display> 
+				<OKResult><![CDATA[
+				world:SetRandomSeed()
+				local name = me.npcObj.Name
+				local SECRET = {53,76}
+				local rate = world:RandomInt(1,100)
+				if rate >= 90 and World.DayCount >= 300 then
+				GameEventMgr:TriggerEvent(97)
+				me:AddMsg(""..name.."在周围几桌修士议论的话题打听得知一条关于古修的消息，获得新的秘闻。");
+				elseif rate >= 70 then
+				me:AddMsg(""..name.."在周围几桌修士议论的话题打听得知最近有新的事情发生，获得新的秘闻。");
+				GameEventMgr:TriggerEvent(world:RandomInt(SECRET[1],SECRET[2]))	
+				else
+				me:AddMsg(""..name.."打听了一圈，发现最近并没有新的事情发生，便打道返回。")
+				end
+				]]></OKResult>
+			</li>
+			<li>
+				<Display>离开客栈</Display>
+				<OKResult><![CDATA[
+				me:AddMsg("[NAME]想了想，决定还是不冒险，转身离去。");
+				]]>
+				</OKResult>
+			</li>
+		</Selections>
+	</Story>
+
+
+</List></Stories>
