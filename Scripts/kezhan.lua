@@ -1,207 +1,151 @@
 local KeZhan = GameMain:GetMod("KeZhan");
 local tbEvent = GameMain:GetMod("_Event");
-
--- 不再需要预定义的ID列表，改为动态获取
+local NPCING = {0,0,0,0}
+local ID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,1021,1022,1023,1024,1025,1026,1027,1028,1029,1030,1031,1032,1033,1034,1035,1036,1037,1038,1039,1040,1041,1042,1043,1044,1045,1046,1047,1048,1049,1050,1051,1052,1053,1054,1055,1056,1057,1058,1059,1060,1061,1062,1063,1064,1065,1066,1067,1068,1069,2001,2002,2003,2004,2005,2006,2007,2008,3001,10001,10002,10003,10004}
 local NewID = {}
+local OldID = {}
 local LunHui = {}
 
 function KeZhan:OnInit()
-    -- 初始化时注册事件
-    print("客栈MOD初始化完成")
+
 end
 
 function KeZhan:OnEnter()
-    tbEvent:RegisterEvent(g_emEvent.SecretUpdate, KeZhan.OnSecretUpdate, "KeZhan")
+	tbEvent:RegisterEvent(g_emEvent.SecretUpdate, KeZhan.OnSecretUpdate, "KeZhan")
 end
 
 function KeZhan:OnLeave()
-    tbEvent:UnRegisterEvent(g_emEvent.SecretUpdate, "KeZhan")
+	tbEvent:UnRegisterEvent(g_emEvent.SecretUpdate, "KeZhan")
 end
 
 function KeZhan.OnSecretUpdate(t,obj)
-    if PlacesMgr:IsLocked("Place_KeZhan") == true then
-        if MapStoryMgr:HasSecret(27961) == true then
-            PlacesMgr:UnLockPlace("Place_KeZhan");
-            MapStoryMgr:GetSecretDef(27961).Hide = true
-        end
-    end
+	if PlacesMgr:IsLocked("Place_KeZhan") == true then
+		if MapStoryMgr:HasSecret(27961) == true then
+			PlacesMgr:UnLockPlace("Place_KeZhan");
+			MapStoryMgr:GetSecretDef(27961).Hide = true
+		end
+	end
 end
 
--- 获取所有可用NPC（动态方式）
-function KeZhan:GetAllAvailableNPCs()
-    NewID = {}
-    local allNPCs = NpcMgr:GetReincarnateIDs()
-    local count = 0
-    
-    -- 获取所有可转世的NPC，不限制ID范围
-    for npcId, npcData in pairs(allNPCs) do
-        -- 只添加有完整数据的NPC
-        if npcData and npcData.LastName and npcData.FristName then
-            -- 过滤掉一些无效或测试用的NPC
-            if not self:IsExcludedNPC(npcId) then
-                table.insert(NewID, npcId)
-                count = count + 1
-            end
-        end
-    end
-    
-    print("客栈MOD：发现" .. count .. "个可用NPC")
-    return NewID
-end
-
-function KeZhan:IsExcludedNPC(npcId)
-    -- 排除一些不合适的NPC（如剧情关键NPC等）
-    local excludedIDs = {
-        0, -- 无效ID
-        -1, -- 测试ID
-        -- 可以在这里添加其他需要排除的ID
-    }
-    
-    for _, excludedId in ipairs(excludedIDs) do
-        if npcId == excludedId then
-            return true
-        end
-    end
-    
-    return false
-end
-
--- 修改原有函数，使用动态获取的NPC
 function KeZhan:GeRandomModNpc()
-    return self:GetAllAvailableNPCs()
+	NewID = {};
+	for k,v in pairs(NpcMgr:GetReincarnateIDs()) do
+		if k >= 107 and v ~= 5288 and v ~= 5289 and v ~= 5290 and v ~= 5291 then
+			NewID[k] = v;
+		end
+	end
+	return NewID;
 end
 
 function KeZhan:GetAllModNpcID()
-    NewID = {}
-    local allNPCs = self:GetAllAvailableNPCs()
-    local i = 1
-    for _, npcId in ipairs(allNPCs) do
-        NewID[i] = npcId
-        i = i + 1
-    end
-    return NewID
+	NewID = {};
+	local i = 1;
+	for k,v in pairs(NpcMgr:GetReincarnateIDs()) do
+		if k >= 107 and v ~= 5288 and v ~= 5289 and v ~= 5290 and v ~= 5291 then
+			NewID[i] = v;
+			i = i + 1;
+		end
+	end
+	return NewID;
 end
 
 function KeZhan:GetAllModNpcName()
-    NewID = {}
-    LunHui = {}
-    local allNPCs = self:GetAllAvailableNPCs()
-    local i = 1
-    
-    for _, npcId in ipairs(allNPCs) do
-        NewID[i] = npcId
-        i = i + 1
-    end
-    
-    for k, v in ipairs(NewID) do
-        local npcData = NpcMgr:GetReincarnateDataByID(v)
-        if npcData then
-            LunHui[k] = npcData.LastName .. npcData.FristName
-        else
-            LunHui[k] = "未知NPC"
-        end
-    end
-    
-    LunHui[#LunHui + 1] = "离开此地"
-    return LunHui
+	NewID = {};
+	LunHui = {}
+	local i = 1;
+	for k,v in pairs(NpcMgr:GetReincarnateIDs()) do
+		if k >= 107 and v ~= 5288 and v ~= 5289 and v ~= 5290 and v ~= 5291 then
+			NewID[i] = v;
+			i = i + 1;
+		end
+	end
+	for k,v in pairs(NewID) do
+		LunHui[k] = NpcMgr:GetReincarnateDataByID(v).LastName..NpcMgr:GetReincarnateDataByID(v).FristName
+	end
+	LunHui[#LunHui + 1] = "离开此地"
+	return LunHui;
 end
 
 function KeZhan:Secrets_KZ_Choice()
-    xlua.private_accessible(CS.XiaWorld.NpcRandomMechine)
-    local Npc = me;
-    local npc = nil;
-    local name = Npc.npcObj.Name
-    local NameList = KeZhan:GetAllModNpcName()
-    local IDList = KeZhan:GetAllModNpcID()
-    
-    world:ShowStoryBox(""..name.."环顾了四周天宫降临的奇人，想要邀请他们加入自己的门派。", "天宫奇人", NameList,
-    function(Key)
-        local key = Key + 1;
-        if key == #NameList then
-            world:ShowMsgBox(""..name.."想了想，决定还是不冒险，转身离去。","离开客栈");
-        else
-            local ID = IDList[key]
-            local reincarnateDataByID = NpcMgr:GetReincarnateDataByID(ID);
-            if reincarnateDataByID then
-                if reincarnateDataByID.Race == "Human" or reincarnateDataByID.Race == nil then
-                    npc = CS.XiaWorld.NpcRandomMechine._RandomNpc("Human", reincarnateDataByID.Sex, 0, reincarnateDataByID.LastName, reincarnateDataByID.FristName, true, reincarnateDataByID)
-                else
-                    npc = CS.XiaWorld.NpcRandomMechine._RandomNpc(reincarnateDataByID.Race, reincarnateDataByID.Sex, 0, reincarnateDataByID.LastName, reincarnateDataByID.FristName, true, reincarnateDataByID)
-                end
-                CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, CS.XiaWorld.World.Instance.map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
-                npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
-                world:ShowMsgBox(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..reincarnateDataByID.LastName..reincarnateDataByID.FristName.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。","邀请加入")
-            else
-                world:ShowMsgBox("招募NPC时出现错误，该NPC数据不存在。","错误")
-            end
-        end
-    end);
+	xlua.private_accessible(CS.XiaWorld.NpcRandomMechine)
+	local Npc = me;
+	local npc = nil;
+	local name = Npc.npcObj.Name
+	local NameList = KeZhan:GetAllModNpcName()
+	local IDList = KeZhan:GetAllModNpcID()
+	world:ShowStoryBox(""..name.."环顾了四周天宫降临的奇人，想要邀请他们加入自己的门派。", "天宫奇人",NameList,
+	function(Key)
+		local key = Key + 1;
+		if key == #NameList then
+			world:ShowMsgBox(""..name.."想了想，决定还是不冒险，转身离去。","离开客栈");
+		else
+			local ID = IDList[key]
+			local reincarnateDataByID = NpcMgr:GetReincarnateDataByID(ID);
+			if reincarnateDataByID.Race == "Human" or reincarnateDataByID.Race == nil then
+				npc = CS.XiaWorld.NpcRandomMechine._RandomNpc("Human", reincarnateDataByID.Sex, 0, reincarnateDataByID.LastName, reincarnateDataByID.FristName, true, reincarnateDataByID)
+			else
+				npc = CS.XiaWorld.NpcRandomMechine._RandomNpc(reincarnateDataByID.Race, reincarnateDataByID.Sex, 0, reincarnateDataByID.LastName, reincarnateDataByID.FristName, true, reincarnateDataByID)
+			end
+			CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
+			npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
+			world:ShowMsgBox(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..NpcMgr:GetReincarnateDataByID(ID).LastName..NpcMgr:GetReincarnateDataByID(ID).FristName.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。","邀请加入")
+			KeZhan:AddOldID(ID)
+		end
+	end);
 end
 
 function KeZhan:Secrets_KZ_Random()
-    local Npc = me;
-    local npc = nil;
-    local name = Npc.npcObj.Name;
-    local IDList = KeZhan:GetAllModNpcID();
-    
-    if #IDList == 0 then
-        world:ShowMsgBox("当前没有可用的NPC可以招募。","提示")
-        return
-    end
-    
-    world:SetRandomSeed();
-    local rate = me:RandomInt(1, #IDList);
-    local reincarnateDataByID = NpcMgr:GetReincarnateDataByID(IDList[rate]);
-    
-    if not reincarnateDataByID then
-        world:ShowMsgBox("随机招募NPC时出现错误，NPC数据不存在。","错误")
-        return
-    end
-    
-    xlua.private_accessible(CS.XiaWorld.NpcRandomMechine);
-    if reincarnateDataByID.Race == "Human" or reincarnateDataByID.Race == nil then
-        npc = CS.XiaWorld.NpcRandomMechine._RandomNpc("Human", reincarnateDataByID.Sex, 0, reincarnateDataByID.LastName, reincarnateDataByID.FristName, true, reincarnateDataByID)
-    else
-        npc = CS.XiaWorld.NpcRandomMechine._RandomNpc(reincarnateDataByID.Race, reincarnateDataByID.Sex, 0, reincarnateDataByID.LastName, reincarnateDataByID.FristName, true, reincarnateDataByID);
-    end
-    
-    CS.XiaWorld.NpcMgr.Instance:AddNpc(npc, Map:RandomBronGrid(), Map, CS.XiaWorld.Fight.g_emFightCamp.Player);
-    npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
-    world:ShowMsgBox(""..reincarnateDataByID.Desc.."", ""..reincarnateDataByID.LastName..reincarnateDataByID.FristName.."");
-    me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..reincarnateDataByID.LastName..reincarnateDataByID.FristName.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。");
+	local Npc = me;
+	local npc = nil;
+	local name = Npc.npcObj.Name;
+	local IDList = KeZhan:GetAllModNpcID();
+	world:SetRandomSeed();
+	local rate = me:RandomInt(1,#IDList);
+	local reincarnateDataByID = NpcMgr:GetReincarnateDataByID(IDList[rate]);
+	xlua.private_accessible(CS.XiaWorld.NpcRandomMechine);
+	if reincarnateDataByID.Race == "Human" or reincarnateDataByID.Race == nil then
+		npc = CS.XiaWorld.NpcRandomMechine._RandomNpc("Human", reincarnateDataByID.Sex, 0, reincarnateDataByID.LastName, reincarnateDataByID.FristName, true, reincarnateDataByID)
+	else
+		npc = CS.XiaWorld.NpcRandomMechine._RandomNpc(reincarnateDataByID.Race, reincarnateDataByID.Sex, 0, reincarnateDataByID.LastName, reincarnateDataByID.FristName, true, reincarnateDataByID);
+	end
+	CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,Map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
+	npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
+	world:ShowMsgBox(""..NpcMgr:GetReincarnateDataByID(IDList[rate]).Desc.."",""..NpcMgr:GetReincarnateDataByID(IDList[rate]).LastName..NpcMgr:GetReincarnateDataByID(IDList[rate]).FristName.."");
+	me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..NpcMgr:GetReincarnateDataByID(IDList[rate]).LastName..NpcMgr:GetReincarnateDataByID(IDList[rate]).FristName.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。");
+	KeZhan:AddOldID(IDList[rate]);
 end
 
--- 移除不再需要的限制函数
+function KeZhan:AddOldID(ID)
+	OldID[ID] = (OldID[ID] or 0) + 1;
+end
+
 function KeZhan:GetNPC(i)
-    return true; -- 始终返回true，允许选择任何NPC
+	if NPCING[i] == 0 then
+		return true;
+	else
+		return false;
+	end
 end
 
 function KeZhan:AddNPC(i)
-    -- 空函数，不再记录选择状态
-    return
+	NPCING[i] = 1;
+	return
 end
 
 function KeZhan:GetID()
-    local allNPCs = self:GetAllModNpcID()
-    if #allNPCs == 0 then
-        return nil
-    end
-    world:SetRandomSeed()
-    local idIndex = me:RandomInt(1, #allNPCs)
-    return allNPCs[idIndex]
+	world:SetRandomSeed()
+	local id = me:RandomInt(1,#ID)
+	return ID[id];
 end
 
 function KeZhan:OnSave()
-    local tbSave = {
-        version = 1.1, -- 版本号，用于兼容性检查
-        message = "使用动态NPC获取方式"
-    };
-    return tbSave;
+	local tbSave = { index1 = NPCING , index2 = OldID };
+	return tbSave;
 end
 
 function KeZhan:OnLoad(tbLoad)
-    if tbLoad ~= nil then
-        print("客栈MOD数据加载完成")
-        -- 不再需要加载旧的限制数据
-    end
+	if tbLoad ~= nil then
+		NPCING = tbLoad["index1"];
+		OldID = tbLoad["index2"];
+	end
 end
