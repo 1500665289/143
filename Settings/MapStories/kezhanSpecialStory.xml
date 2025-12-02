@@ -61,26 +61,6 @@
                     me:TriggerStory("Secrets_KZ6");  <!-- 触发打听消息功能 -->
                     ]]></OKResult>
                 </li>
-                <!-- 新增：重置NPC状态按钮 -->
-                <li>
-                    <Display>重置客栈状态</Display> 
-                    <Tip>清空已标记NPC，重置房间状态</Tip>
-                    <OKResult><![CDATA[
-                    local name = me.npcObj.Name
-                    <!-- 显示确认对话框 -->
-                    world:ShowMsgBox("确定要重置客栈状态吗？这将清空所有已标记的NPC记录，释放所有客栈房间。", "重置确认", 
-                        {"确定重置", "取消"},
-                        function(choice)
-                            if choice == 0 then  <!-- 选择"确定重置" -->
-                                <!-- 调用模组的重置功能 -->
-                                GameMain:GetMod("KeZhan"):ResetMarkedNPCs()
-                                me:AddMsg(""..name.."施展神通，重置了客栈的时空状态，所有奇人异士重新出现在客栈中。")
-                            else
-                                me:AddMsg(""..name.."想了想，还是不要轻易扰动时空为好。")
-                            end
-                        end)
-                    ]]></OKResult>
-                </li>
                 <li>
                     <Display>离开客栈</Display>
                     <OKResult><![CDATA[
