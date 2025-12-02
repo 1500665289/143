@@ -1,10 +1,10 @@
 local KeZhan = GameMain:GetMod("KeZhan");
 local tbEvent = GameMain:GetMod("_Event");
-local NPCING = {0,0,0,0}
+-- 移除NPCING数组，不再跟踪NPC选择状态
 local ID = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,1021,1022,1023,1024,1025,1026,1027,1028,1029,1030,1031,1032,1033,1034,1035,1036,1037,1038,1039,1040,1041,1042,1043,1044,1045,1046,1047,1048,1049,1050,1051,1052,1053,1054,1055,1056,1057
 ,1058,1059,1060,1061,1062,1063,1064,1065,1066,1067,1068,1069,2001,2002,2003,2004,2005,2006,2007,2008,3001,10001,10002,10003,10004}
 local NewID = {}
-local OldID = {}
+local OldID = {} -- 不再使用OldID来限制选择
 local LunHui = {}
 
 function KeZhan:OnInit()
@@ -31,7 +31,7 @@ end
 function KeZhan:GeRandomModNpc()
 NewID = {};
 for k,v in pairs(NpcMgr:GetReincarnateIDs()) do
-	if k >= 107 and v ~= 5288 and v ~= 5289 and v ~= 5290 and v ~= 5291 and OldID[v] == nil then
+	if k >= 107 then -- 移除OldID限制
 		NewID[k] = v;
 	end
 end
@@ -42,7 +42,7 @@ function KeZhan:GetAllModNpcID()
 NewID = {};
 local i = 1;
 for k,v in pairs(NpcMgr:GetReincarnateIDs()) do
-	if k >= 107 and v ~= 5288 and v ~= 5289 and v ~= 5290 and v ~= 5291 and OldID[v] == nil then
+	if k >= 107 then -- 移除OldID限制
 		NewID[i] = v;
 	i = i + 1;
 	end
@@ -55,7 +55,7 @@ NewID = {};
 LunHui = {}
 local i = 1;
 for k,v in pairs(NpcMgr:GetReincarnateIDs()) do
-	if k >= 107 and v ~= 5288 and v ~= 5289 and v ~= 5290 and v ~= 5291 and OldID[v] == nil then
+	if k >= 107 then -- 移除OldID限制
 		NewID[i] = v;
 	i = i + 1;
 	end
@@ -90,7 +90,7 @@ end
 CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,CS.XiaWorld.World.Instance.map:RandomBronGrid(),Map,CS.XiaWorld.Fight.g_emFightCamp.Player);
 npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
 world:ShowMsgBox(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..NpcMgr:GetReincarnateDataByID(ID).LastName..NpcMgr:GetReincarnateDataByID(ID).FristName.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。","邀请加入")
-KeZhan:AddOldID(ID)
+-- 移除 KeZhan:AddOldID(ID) 调用，允许重复选择
 end
 end);
 end
@@ -113,23 +113,22 @@ CS.XiaWorld.NpcMgr.Instance:AddNpc(npc,Map:RandomBronGrid(),Map,CS.XiaWorld.Figh
 npc:ChangeRank(CS.XiaWorld.g_emNpcRank.Worker);
 world:ShowMsgBox(""..NpcMgr:GetReincarnateDataByID(IDList[rate]).Desc.."",""..NpcMgr:GetReincarnateDataByID(IDList[rate]).LastName..NpcMgr:GetReincarnateDataByID(IDList[rate]).FristName.."");
 me:AddMsg(""..name.."一眼过去就看中了眼前的这个人并热情的邀请他去参观该门派，【"..NpcMgr:GetReincarnateDataByID(IDList[rate]).LastName..NpcMgr:GetReincarnateDataByID(IDList[rate]).FristName.."】禁不住"..name.."的热情邀请，最终同意与他前往参观门派（监狱）。");
-KeZhan:AddOldID(IDList[rate]);
+-- 移除 KeZhan:AddOldID(IDList[rate]) 调用，允许重复选择
 end
 
+-- 移除AddOldID函数，不再需要
 function KeZhan:AddOldID(ID)
-OldID[ID] = 1;
+-- 空函数，不再限制选择
 end
 
+-- 修改GetNPC函数，始终返回true允许选择
 function KeZhan:GetNPC(i)
-	if NPCING[i] == 0 then
-	return true;
-	else
-	return false;
-	end
+	return true; -- 始终返回true，允许选择任何NPC
 end
 
+-- 修改AddNPC函数，不再记录选择状态
 function KeZhan:AddNPC(i)
-	NPCING[i] = 1;
+	-- 空函数，不再记录选择状态
 	return
 end
 
